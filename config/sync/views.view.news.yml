@@ -97,18 +97,18 @@ display:
         options: {  }
       empty: {  }
       sorts:
-        search_api_datasource:
-          id: search_api_datasource
+        search_api_id:
+          id: search_api_id
           table: search_api_index_news
-          field: search_api_datasource
+          field: search_api_id
           relationship: none
           group_type: group
           admin_label: ''
           plugin_id: search_api
           order: ASC
           expose:
-            label: ''
-            field_identifier: ''
+            label: 'Item ID'
+            field_identifier: search_api_id
           exposed: false
       arguments: {  }
       filters: {  }
@@ -143,9 +143,24 @@ display:
     position: 1
     display_options:
       pager:
-        type: none
+        type: mini
         options:
           offset: 0
+          pagination_heading_level: h4
+          items_per_page: 10
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
       filters:
         search_api_fulltext:
           id: search_api_fulltext
@@ -161,7 +176,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -200,15 +215,18 @@ display:
         groups:
           1: AND
       defaults:
+        css_class: false
         pager: false
         filters: false
         filter_groups: false
+      css_class: grid-view-2-col
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.news'
@@ -220,27 +238,10 @@ display:
     position: 2
     display_options:
       pager:
-        type: full
+        type: some
         options:
           offset: 0
-          pagination_heading_level: h4
           items_per_page: 6
-          total_pages: null
-          id: 0
-          tags:
-            next: ›
-            previous: ‹
-            first: «
-            last: »
-          expose:
-            items_per_page: false
-            items_per_page_label: 'Items per page'
-            items_per_page_options: '5, 10, 25, 50'
-            items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
-            offset: false
-            offset_label: Offset
-          quantity: 9
       style:
         type: default
         options: {  }
@@ -251,16 +252,17 @@ display:
             'entity:node':
               news: teaser
       defaults:
+        css_class: false
         pager: false
         style: false
         row: false
+      css_class: grid-view-2-col
       display_description: ''
       display_extenders: {  }
     cache_metadata:
       max-age: -1
       contexts:
         - 'languages:language_interface'
-        - url.query_args
         - 'user.node_grants:view'
       tags:
         - 'config:search_api.index.news'

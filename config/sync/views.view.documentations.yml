@@ -75,7 +75,7 @@ display:
             'entity:node':
               documentation: teaser
       pager:
-        type: full
+        type: mini
         options:
           offset: 0
           pagination_heading_level: h4
@@ -85,8 +85,6 @@ display:
           tags:
             next: 'Next ›'
             previous: '‹ Previous'
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -95,7 +93,6 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -130,7 +127,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Search
+            label: ''
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -176,6 +173,7 @@ display:
           preserve_facet_query_args: false
           query_tags: {  }
       relationships: {  }
+      css_class: grid-view-2-col
       use_ajax: true
       header: {  }
       footer: {  }

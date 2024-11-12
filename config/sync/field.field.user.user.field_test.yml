@@ -1,0 +1,20 @@
+uuid: ab288171-1115-4983-affd-b3985b787044
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_test
+  module:
+    - user
+id: user.user.field_test
+field_name: field_test
+entity_type: user
+bundle: user
+label: Test
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

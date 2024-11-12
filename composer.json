@@ -141,7 +141,9 @@
         "drupal/core-recommended": "^10.3",
         "drupal/drupal_cms": "*",
         "drupal/drupal_cms_installer": "*",
+        "drupal/eca_cm": "^1.0",
         "drupal/search_api": "^1.35",
+        "drupal/webform_views": "^5.4",
         "drush/drush": "^12.5"
     },
     "require-dev": {
